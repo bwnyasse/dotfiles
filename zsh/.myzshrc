@@ -1,6 +1,6 @@
 ################### SOURCING ############### 
 
-export PATH="$PATH:"~/dev/flutter/bin"
+export PATH="$PATH:~/dev/flutter/bin"
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
