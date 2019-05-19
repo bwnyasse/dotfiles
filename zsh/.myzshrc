@@ -1,0 +1,115 @@
+################### SOURCING ############### 
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
+# Tell homebrew to not autoupdate every single time I run it (just once a week).
+export HOMEBREW_AUTO_UPDATE_SECS=604800
+
+################### ALIAS ############### 
+#########################################
+alias h='history'
+alias c='clear'
+alias ll='ls -alF'
+alias zshreload="source ~/.zshrc"
+alias gogr='cd ~/gr'
+
+## -------------------
+## DOCKER
+##
+# Docker image visualization (usage: `dockviz images -t`).
+alias dockviz="docker run --rm -v /var/run/docker.sock:/var/run/docker.sock nate/dockviz"
+
+## -------------------
+## GIT
+##
+alias gs='git status'
+alias gst='git status'
+alias gpr='git pull --rebase'
+alias gl='git log --pretty=oneline --abbrev-commit'
+alias gf='git fetch;git fetch --tags'
+alias gitchmodexec='git update-index --chmod=+x'
+alias gsetorigin='git remote set-url origin '
+alias gcleancache='git rm --cached -r . && git reset --hard'
+alias gitcredentialhelper='git config --global credential.helper "cache --timeout=3600"'
+
+################ FUNCTIONS ############### 
+##########################################
+
+# Enter a running Docker container.
+denter() {
+  if [[ ! "$1" ]] ; then
+      echo "You must supply a container ID or name."
+      return 0
+  fi
+
+  docker exec -it $1 bash
+  return 0
+}
+
+# Git upstream branch syncer.
+# Usage: gsync master (checks out master, pull upstream, push origin).
+gitsync() {
+  if [[ ! "$1" ]] ; then
+      echo "You must supply a branch."
+      return 0
+  fi
+
+  BRANCHES=$(git branch --list $1)
+  if [ ! "$BRANCHES" ] ; then
+     echo "Branch $1 does not exist."
+     return 0
+  fi
+
+  git checkout "$1" && \
+  git pull upstream "$1" && \
+  git push origin "$1"
+}
+
+# Delete a given line number in the known_hosts file.
+knownrm() {
+  re='^[0-9]+$'
+  if ! [[ $1 =~ $re ]] ; then
+    echo "error: line number missing" >&2;
+  else
+    sed -i '' "$1d" ~/.ssh/known_hosts
+  fi
+}
+
+push-ssh-key() {
+  ssh $1 "echo '`cat ~/.ssh/id_rsa.pub`' >> ~/.ssh/authorized_keys"
+}
+
+octalpermission_file() {
+    stat -c "%a %n" "$1"
+}
+
+my_public_ip() {
+    curl https://ipinfo.io/ip
+}
+
+## -------------------
+## VMS CONNECTION
+##
+go() {
+    host_connection=$1
+    ssh -oStrictHostKeyChecking=no $host_connection
+}
+
+######" Go TO VPS"
+go_mjy() {
+    go mjy
+}
+
+go_ovh1(){
+    go ovh1
+}
+go_ovh2(){
+    go ovh2
+}
+go_scaleway1(){
+    go scaleway1
+}
+go_scaleway2(){
+    go scaleway2
+}
