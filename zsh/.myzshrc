@@ -36,6 +36,17 @@ alias gsetorigin='git remote set-url origin '
 alias gcleancache='git rm --cached -r . && git reset --hard'
 alias gitcredentialhelper='git config --global credential.helper "cache --timeout=3600"'
 
+## -------------------
+## MAVEN
+##
+alias install='mvn clean install'
+alias installD='mvn clean install -DskipTests=true'
+alias installN='mvn install'
+alias compile='mvn clean compile'
+alias compileD='mvn clean compile -DskipTests=true'
+alias compileN='mvn compile'
+alias mvndoc='mvn clean site site:run "-Dsite.outputEncoding=ISO-8859-1"'
+
 ################ FUNCTIONS ############### 
 ##########################################
 
