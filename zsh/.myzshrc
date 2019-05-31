@@ -1,6 +1,7 @@
 ################### SOURCING ############### 
 
 export PATH="$PATH:/Users/bwnyasse/dev/flutter/bin"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
@@ -49,6 +50,11 @@ alias mvndoc='mvn clean site site:run "-Dsite.outputEncoding=ISO-8859-1"'
 
 ################ FUNCTIONS ############### 
 ##########################################
+
+gcloudconnect() {
+  local project=$1
+  gcloud alpha cloud-shell ssh --project $project
+}
 
 # Enter a running Docker container.
 denter() {
