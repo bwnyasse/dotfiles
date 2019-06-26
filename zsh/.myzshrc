@@ -58,10 +58,31 @@ alias mvndoc='mvn clean site site:run "-Dsite.outputEncoding=ISO-8859-1"'
 ################ FUNCTIONS ############### 
 ##########################################
 
+## --------------------
+## GCLOUD
+##
+alias gcloud_current_project='gcloud config get-value project'
+
 gcloudconnect() {
   local project=$1
   gcloud alpha cloud-shell ssh --project $project
 }
+
+gcloud_activate_service_for_dm() {
+  gcloud services enable deploymentmanager.googleapis.com && \
+  gcloud services enable cloudresourcemanager.googleapis.com && \
+  gcloud services enable cloudbilling.googleapis.com && \
+  gcloud services enable iam.googleapis.com && \
+  gcloud services enable servicemanagement.googleapis.com
+}
+
+## Create a deployment for a given config.yaml file
+gcloud_deployment_create() {
+  local name=$1
+  gcloud deployment-manager deployments create $1 --config config.yaml
+}
+
+
 
 # Enter a running Docker container.
 denter() {
