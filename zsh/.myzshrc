@@ -1,7 +1,8 @@
 ################### SOURCING ############### 
 
 export PATH="$PATH:/Users/bwnyasse/dev/flutter/bin"
-export PATH="$PATH":"$HOME/.pub-cache/bin"
+export PATH="$PATH:/Users/bwnyasse/.pub-cache/bin"
+export PATH="$PATH:/Users/bwnyasse/dev/terraform"
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
