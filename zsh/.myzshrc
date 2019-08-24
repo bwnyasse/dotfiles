@@ -152,7 +152,7 @@ my_public_ip() {
 ## -------------------
 ## VMS CONNECTION
 ##
-go() {
+go_host() {
     host_connection=$1
     ssh -oStrictHostKeyChecking=no $host_connection
 }
