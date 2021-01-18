@@ -3,6 +3,7 @@
 export PATH="$PATH:/Users/bwnyasse/dev/flutter/bin"
 export PATH="$PATH:/Users/bwnyasse/.pub-cache/bin"
 export PATH="$PATH:/Users/bwnyasse/dev/terraform"
+export PATH="$PATH:/Users/bwnyasse/gr/googlesource/fuchsia/.jiri_root/bin"
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
@@ -26,6 +27,9 @@ alias zshreload="source ~/.zshrc"
 alias gogr='cd ~/gr'
 alias godotfiles='cd ~/.dotfiles'
 
+#### Learning Python 
+alias go-python-remote-server='ssh cloud_user@borisnyasse1c.mylabserver.com'
+
 ## ------------------
 ## FZF - no duplicate line in zsh history
 ##
@@ -43,6 +47,7 @@ setopt HIST_BEEP
 ##
 # Docker image visualization (usage: `dockviz images -t`).
 alias dockviz="docker run --rm -v /var/run/docker.sock:/var/run/docker.sock nate/dockviz"
+alias ls-containers="docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.RunningFor}}\t{{.Status}}'"
 
 ## -------------------
 ## GIT
@@ -56,6 +61,17 @@ alias gitchmodexec='git update-index --chmod=+x'
 alias gsetorigin='git remote set-url origin '
 alias gcleancache='git rm --cached -r . && git reset --hard'
 alias gitcredentialhelper='git config --global credential.helper "cache --timeout=3600"'
+
+## DEMO 
+alias go-master='git reset --hard && git checkout master'
+alias go-step0='git reset --hard && git checkout step0'
+alias go-step1='git reset --hard && git checkout step1'
+alias go-step2='git reset --hard && git checkout step2'
+alias go-step3='git reset --hard && git checkout step3'
+alias go-step4='git reset --hard && git checkout step4'
+alias go-step5='git reset --hard && git checkout step5'
+alias go-step6='git reset --hard && git checkout step6'
+alias go-step7='git reset --hard && git checkout step7'
 
 ## -------------------
 ## MAVEN
@@ -138,7 +154,7 @@ knownrm() {
 }
 
 push-ssh-key() {
-  ssh $1 "echo '`cat ~/.ssh/id_rsa.pub`' >> ~/.ssh/authorized_keys"
+  ssh $1 "echo '`cat ~/.ssh/id_ed25519.pub`' >> ~/.ssh/authorized_keys"
 }
 
 octalpermission_file() {
@@ -159,20 +175,20 @@ go_host() {
 
 ######" Go TO VPS"
 go_mjy() {
-    go mjy
+    go_host mjy
 }
 
 go_ovh1(){
-    go ovh1
+    go_host ovh1
 }
 go_ovh2(){
-    go ovh2
+    go_host ovh2
 }
 go_scaleway1(){
-    go scaleway1
+    go_host scaleway1
 }
 go_scaleway2(){
-    go scaleway2
+    go_host scaleway2
 }
 
 
