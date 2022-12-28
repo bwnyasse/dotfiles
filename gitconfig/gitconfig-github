@@ -1,6 +1,9 @@
 [user]
-name = bwnyasse
+	name = bwnyasse
 email = 5323628+bwnyasse@users.noreply.github.com
+	signingkey = 0703F262690FAC93
 
 [core]
 sshCommand = ssh -i ~/.ssh/id_ed25519_github
+[commit]
+	gpgsign = true
