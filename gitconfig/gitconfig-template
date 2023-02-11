@@ -1,0 +1,12 @@
+[includeIf "gitdir:~/gr/github/"]
+path = ~/gr/github/bwnyasse/dotfiles/gitconfig/gitconfig-github
+
+[includeIf "gitdir:~/gr/gitlab/"]
+path = ~/gr/github/bwnyasse/dotfiles/gitconfig/gitconfig-gitlab
+
+[includeIf "gitdir:~/gr/cloud-source/"]
+path = ~/gr/github/bwnyasse/dotfiles/gitconfig/gitconfig-cloud-source
+
+## DATAVALET
+[includeIf "gitdir:~/gr/gitlab-datavalet/"]
+path = ~/gr/github/bwnyasse/dotfiles/gitconfig/gitconfig-gitlab-datavalet

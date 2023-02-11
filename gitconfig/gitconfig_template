@@ -1,8 +1,0 @@
-[includeIf "gitdir:~/gr/github/"]
-path = ~/gr/github/dotfiles/gitconfig/gitconfig-github
-
-[includeIf "gitdir:~/gr/gitlab/"]
-path = ~/gr/github/dotfiles/gitconfig/gitconfig-gitlab
-
-[includeIf "gitdir:~/gr/cloud-source/"]
-path = ~/gr/github/dotfiles/gitconfig/gitconfig-cloud-source
