@@ -4,7 +4,14 @@ plugins=(
   fzf
 )
 
-################### SOURCING ############### 
+################### NVM (Node Version Manager) ###############
+# As per Homebrew installation instructions for NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+#############################################################
+
+################### SOURCING ###############
 
 export PATH="$PATH:$HOME/.pub-cache/bin"
 export PATH="/Users/boris-wilfriednyasse/fvm/versions/3.24.4/bin:$PATH"
@@ -12,7 +19,7 @@ export PATH="/Users/boris-wilfriednyasse/fvm/versions/3.24.4/bin:$PATH"
 #export PATH="$PATH:$HOME/dev/terraform"
 #export PATH="$PATH:$HOME/gr/googlesource/fuchsia/.jiri_root/bin"
 
-# JAVA 
+# JAVA
 # JAVA Configuration
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 export JAVA_HOME="/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home"
@@ -34,7 +41,7 @@ export HOMEBREW_AUTO_UPDATE_SECS=604800
 # The next line enables shell command completion for gcloud.
 #if [ -f '$HOME/Documents/gcp/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/Documents/gcp/google-cloud-sdk/completion.zsh.inc'; fi
 
-################### ALIAS ############### 
+################### ALIAS ###############
 #########################################
 alias h='history'
 alias c='clear'
@@ -44,7 +51,7 @@ alias gogr='cd $HOME/gr'
 alias gohome='cd $HOME/'
 alias godotfiles="cd $HOME/gr/github/bwnyasse/dotfiles"
 
-#### Learning Python 
+#### Learning Python
 #alias go-python-remote-server='ssh cloud_user@borisnyasse1c.mylabserver.com'
 
 ## ------------------
@@ -80,7 +87,7 @@ alias gsetorigin='git remote set-url origin '
 alias gcleancache='git rm --cached -r . && git reset --hard'
 alias gitcredentialhelper='git config --global credential.helper "cache --timeout=3600"'
 
-## DEMO 
+## DEMO
 alias go-main='git reset --hard && git checkout main'
 alias go-step0='git reset --hard && git checkout step0'
 alias go-step1='git reset --hard && git checkout step1'
@@ -102,7 +109,7 @@ alias compileD='mvn clean compile -DskipTests=true'
 alias compileN='mvn compile'
 alias mvndoc='mvn clean site site:run "-Dsite.outputEncoding=ISO-8859-1"'
 
-################ FUNCTIONS ############### 
+################ FUNCTIONS ###############
 ##########################################
 
 ## --------------------
@@ -183,14 +190,14 @@ go_host() {
     ssh -oStrictHostKeyChecking=no $host_connection
 }
 
-## DVM 
-###### 
+## DVM
+######
 if [[ -f ~/.dvm/scripts/dvm ]]; then
   . ~/.dvm/scripts/dvm
 fi
 
-## RUSH 
-###### 
+## RUSH
+######
 if [[ -f ~/.cargo/env ]]; then
   . ~/.cargo/env
 fi
