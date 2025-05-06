@@ -7,11 +7,19 @@ plugins=(
 ################### SOURCING ############### 
 
 export PATH="$PATH:$HOME/.pub-cache/bin"
-export FVM_HOME="$HOME/fvm/"
-
+export PATH="/Users/boris-wilfriednyasse/fvm/versions/3.24.4/bin:$PATH"
 #export PATH="$PATH:$HOME/dev/flutter/bin"
 #export PATH="$PATH:$HOME/dev/terraform"
 #export PATH="$PATH:$HOME/gr/googlesource/fuchsia/.jiri_root/bin"
+
+# JAVA 
+# JAVA Configuration
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include"
+
+# PYTHON
+export PATH="/opt/homebrew/opt/python@3.13/bin:$PATH"
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
@@ -175,4 +183,14 @@ go_host() {
     ssh -oStrictHostKeyChecking=no $host_connection
 }
 
+## DVM 
+###### 
+if [[ -f ~/.dvm/scripts/dvm ]]; then
+  . ~/.dvm/scripts/dvm
+fi
 
+## RUSH 
+###### 
+if [[ -f ~/.cargo/env ]]; then
+  . ~/.cargo/env
+fi

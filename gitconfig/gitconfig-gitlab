@@ -1,6 +1,11 @@
 [user]
-name = bwnyasse
-email = 
+	name = bwnyasse
+	email = 567121-bwnyasse@users.noreply.gitlab.com
+	signingkey = F9A54BE990D23E5A
 
 [core]
-sshCommand = 
+	sshCommand = ssh -i ~/.ssh/id_ed25519_gitlab
+
+[commit]
+	gpgsign = true
+
