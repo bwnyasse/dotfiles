@@ -7,6 +7,9 @@ path = ~/gr/github/bwnyasse/dotfiles/gitconfig/gitconfig-gitlab
 [includeIf "gitdir:~/gr/cloud-source/"]
 path = ~/gr/github/bwnyasse/dotfiles/gitconfig/gitconfig-cloud-source
 
+[includeIf "gitdir:~/gr/bitbucket/"]
+path = ~/gr/github/bwnyasse/dotfiles/gitconfig/gitconfig-bitbucket
+
 ## DATAVALET
 [includeIf "gitdir:~/gr/gitlab-datavalet/"]
 path = ~/gr/github/bwnyasse/dotfiles/gitconfig/gitconfig-gitlab-datavalet
